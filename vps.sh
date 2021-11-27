@@ -1,19 +1,19 @@
 #!/bin/bash
-# Three-in-One-Step Automated Install WireGuard Shadowsocks V2Ray on Server. URL: https://git.io/vps.setup
+# Three-in-One-Step Automated Install WireGuard Shadowsocks V2Ray on Server. URL: https://raw.githubusercontent.com/assemator/vps_setup/english/vps.sh
 
-# Usage:  bash <(curl -L -s https://git.io/vps.setup)
+# Usage:  bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/vps.sh)
 
 # Default Three-in-One-Step Automated Installation
 default_install(){
 
     # WireGuard installer
-    wget -qO- https://git.io/wireguard.sh | bash
+    wget -qO- https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh | bash
 
     # Install WireGuard+Speeder+Udp2Raw and SS+Kcp+Udp2RAW Configuration
     bash wgmtu setup
 
     # Install Shadowsocks & V2Ray
-    bash <(curl -L -s https://git.io/v2ray_ss.sh)
+    bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
 
 }
 
@@ -51,7 +51,7 @@ wget_curl(){
 # Setting Menu
 start_menu(){
     clear
-    echo_GreenBG ">     Open Source Project: https://github.com/hongwenjun/vps_setup    "
+    echo_GreenBG ">     Open Source Project: https://github.com/assemator/vps_setup    "
     echo_SkyBlue ">  1. Default Three-in-One-Step Automated WireGuard Shadowsocks V2Ray "
     echo_SkyBlue ">  2. Choose to install WireGuard VPN Multi-user Configuration "
     echo_SkyBlue ">  3. Compile install / Update ${RedBG} shadowsocks-libev ${Font}"
@@ -84,11 +84,11 @@ start_menu(){
         ;;
         7)
         #  Get WireGuard Management Command : bash wgmtu
-        wget -O ~/wgmtu  https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wgmtu.sh
+        wget -O ~/wgmtu  https://raw.githubusercontent.com/assemator/vps_setup/english/wgmtu.sh
         bash wgmtu
         ;;
         8)
-        bash <(curl -L -s https://git.io/v2ray_ss.sh)
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
         ;;
         *)
         default_install
