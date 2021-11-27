@@ -1,7 +1,7 @@
 #!/bin/bash
-# Easy Install Shadowsocks & V2Ray : Generate and display QR_code  URL: https://git.io/v2ray_ss.sh
+# Easy Install Shadowsocks & V2Ray : Generate and display QR_code  URL: https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh
 
-# Usage:  bash <(curl -L -s https://git.io/v2ray_ss.sh)
+# Usage:  bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
 
 let v2ray_port=$RANDOM+9999
 UUID=$(cat /proc/sys/kernel/random/uuid)
@@ -238,7 +238,7 @@ conf_QRcode(){
      echo_SkyBlue  ":: V2rayN Windows Client Vmess Protocol Configuration"
      echo $v2ray_vmess
      echo
-     echo_Yellow  ":: Usage: ${RedBG} bash <(curl -L -s https://git.io/v2ray_ss.sh) setup ${Font} to Modified Port Password and UUID"
+     echo_Yellow  ":: Usage: ${RedBG} bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh) setup ${Font} to Modified Port Password and UUID"
 }
 
 # Set v2ray port and UUID
@@ -273,7 +273,7 @@ if [[ $# > 0 ]]; then
 fi
 
 echo_SkyBlue  ":: Easy Install Shadowsocks & V2Ray : Generate and display QR_code  By 蘭雅sRGB "
-echo_Yellow   ":: Usage:  bash <(curl -L -s https://git.io/v2ray_ss.sh) "
+echo_Yellow   ":: Usage:  bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh) "
 
 # Output ss and v2ray configuration and QR code
 conf_QRcode 2>&1 | tee ${cur_dir}/v2ray_ss.log
