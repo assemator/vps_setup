@@ -2,7 +2,7 @@
 - [![](https://raw.githubusercontent.com/hongwenjun/vps_setup/master/img/youtube.png)](https://www.youtube.com/sRGB18/videos) &nbsp;&nbsp;www.youtube.com/sRGB18 &nbsp;&nbsp;[![](https://raw.githubusercontent.com/hongwenjun/vps_setup/master/img/paypal.png)Donate!](https://paypal.me/sRGB18)&nbsp;&nbsp;https://paypal.me/sRGB18
 
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/hongwenjun/vps_setup/english/vps.sh)
+bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/vps.sh)
 ```
 ![](https://raw.githubusercontent.com/assemator/vps_setup/master/img/vps.english.png)
 ------
