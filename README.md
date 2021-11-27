@@ -2,9 +2,9 @@
 - [![](https://raw.githubusercontent.com/hongwenjun/vps_setup/master/img/youtube.png)](https://www.youtube.com/sRGB18/videos) &nbsp;&nbsp;www.youtube.com/sRGB18 &nbsp;&nbsp;[![](https://raw.githubusercontent.com/hongwenjun/vps_setup/master/img/paypal.png)Donate!](https://paypal.me/sRGB18)&nbsp;&nbsp;https://paypal.me/sRGB18
 
 ```
-bash <(curl -L -s https://git.io/vps.setup)
+bash <(curl -L -s https://raw.githubusercontent.com/hongwenjun/vps_setup/english/vps.sh)
 ```
-![](https://raw.githubusercontent.com/hongwenjun/vps_setup/master/img/vps.english.png)
+![](https://raw.githubusercontent.com/assemator/vps_setup/master/img/vps.english.png)
 ------
 
 ![](https://www.wireguard.com/img/wireguard.svg)
@@ -15,10 +15,10 @@ WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-o
 
 ```
 # One-Step Automated Install WireGuard Script
-wget -qO- https://git.io/wireguard.sh | bash
+wget -qO- https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wireguard-install.sh | bash
 
 # Custom Port Install WireGuard Script, Number set Port
-bash <(curl -L -s https://git.io/wireguard.sh) 9999
+bash <(curl -L -s https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wireguard-install.sh) 9999
 ```
 
 [WireGuard](https://www.wireguard.com) installer for Ubuntu 18.04 LTS, Debian 9 and CentOS 7.
@@ -43,5 +43,5 @@ Project V is a set of network tools that help you to build your own computer net
 
 ```
 # Easy Install Shadowsocks & V2Ray : Generate and display QR code
-bash <(curl -L -s https://git.io/v2ray_ss.sh)
+bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
 ```
