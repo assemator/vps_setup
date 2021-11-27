@@ -129,7 +129,7 @@ wg_clients(){
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 8.8.8.8, 2001:4860:4860::8888
+DNS = 1.1.1.1, 2606:4700:4700::1111
 
 [Peer]
 PublicKey = $(wg show wg0 public-key)
@@ -177,13 +177,13 @@ echo_RedBG(){
 
 safe_iptables(){
    # IPTABLES 设置防火墙规则 脚本 By 蘭雅sRGB  特别感谢 TaterLi 指导
-   wget -qO safe_iptables.sh git.io/fhUSe && bash safe_iptables.sh
+   wget -qO safe_iptables.sh https://raw.githubusercontent.com/assemator/vps_setup/master/safe_iptables.sh && bash safe_iptables.sh
 }
 
 #  Get WireGuard Management Command : bash wgmtu
 update_self(){
 
-    wget -O ~/wgmtu  https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wgmtu.sh
+    wget -O ~/wgmtu  https://raw.githubusercontent.com/assemator/vps_setup/english/wgmtu.sh
 }
 
 # update WireGuard
@@ -337,7 +337,7 @@ add_peer(){
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 8.8.8.8, 2001:4860:4860::8888
+DNS = 1.1.1.1, 2606:4700:4700::1111
 
 [Peer]
 PublicKey = $(wg show wg0 public-key)
@@ -395,7 +395,7 @@ wg_clients_menu(){
 start_menu(){
     clear
 echo_RedBG   " One-Step Automated Install WireGuard Script For Debian_9 Ubuntu Centos_7 "
-echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup        "
+echo_GreenBG "      Open Source Project: https://github.com/assemator/vps_setup        "
     echo -e "${Green}>  1. Display Client Configuration and QR code for Mobile Phone "
     echo -e ">  2. Modify WireGuard Server MTU Number"
     echo -e ">  3. Modify WireGuard Server Port"
@@ -432,7 +432,7 @@ echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup
         exit 1
         ;;
         7)
-        wget -O wgmtu https://git.io/wgmtu && bash wgmtu
+        wget -O wgmtu https://raw.githubusercontent.com/hongwenjun/vps_setup/master/Wireguard/wgmtu.sh && bash wgmtu
         exit 1
         ;;
         8)
@@ -448,7 +448,7 @@ echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup
         rc-local_remove
         ;;
         9999)
-        bash <(curl -L -s https://git.io/wireguard.sh) 9999
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh) 9999
         ;;
         -U)
         update_self
@@ -457,10 +457,10 @@ echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup
         wgmtu_help
         ;;
         vps)
-        bash <(curl -L -s https://git.io/vps.setup)
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/vps.sh)
         ;;
         vnstat)
-        bash <(curl -L -s https://git.io/fxxlb) setup
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/master/netlog.sh) setup
         ;;
         bench)
         wget -qO- git.io/superbench.sh | bash
@@ -469,7 +469,7 @@ echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup
         wget -qO- git.io/fp5lf | bash
         ;;
         v2ray)
-        bash <(curl -L -s https://git.io/v2ray_ss.sh)
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
         ;;
         log)
         cat vps_setup.log
@@ -501,7 +501,7 @@ if [[ $# > 0 ]]; then
         rc-local_remove
         ;;
         9999)
-        bash <(curl -L -s https://git.io/wireguard.sh) 9999
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh) 9999
         ;;
         -U)
         update_self
@@ -510,10 +510,10 @@ if [[ $# > 0 ]]; then
         wgmtu_help
         ;;
         vps)
-        bash <(curl -L -s https://git.io/vps.setup)
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/vps.sh)
         ;;
         vnstat)
-        bash <(curl -L -s https://git.io/fxxlb) setup
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/master/netlog.sh) setup
         ;;
         bench)
         wget -qO- git.io/superbench.sh | bash
@@ -522,7 +522,7 @@ if [[ $# > 0 ]]; then
         wget -qO- git.io/fp5lf | bash
         ;;
         v2ray)
-        bash <(curl -L -s https://git.io/v2ray_ss.sh)
+        bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/v2ray_ss_conf.sh)
         ;;
         log)
         cat vps_setup.log
