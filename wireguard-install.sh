@@ -1,7 +1,7 @@
 #!/bin/bash
 # WireGuard  installer for Ubuntu 18.04 LTS, Debian 9 and CentOS 7.
 
-# Usage:  wget -qO- https://git.io/wireguard.sh | bash
+# Usage:  wget -qO- https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh | bash
 
 # This script will let you setup your own VPN server in no more than a minute, even if you haven't used WireGuard before.
 # It has been designed to be as unobtrusive and universal as possible.
@@ -62,7 +62,7 @@ ipv6_range="fd08:620c:4df0:65eb::"
 
 
 #  Get WireGuard Management Command : bash wgmtu
-wget -O ~/wgmtu  https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wgmtu.sh
+wget -O ~/wgmtu  https://raw.githubusercontent.com/assemator/vps_setup/english/wgmtu.sh
 
 # Definition Display Text Color
 Green="\033[32m"  && Red="\033[31m" && GreenBG="\033[42;37m" && RedBG="\033[41;37m"
@@ -134,7 +134,7 @@ Address = 10.0.0.1/24,  ${ipv6_range}1/64
 PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = $port
-DNS = 8.8.8.8, 2001:4860:4860::8888
+DNS = 1.1.1.1, 2606:4700:4700::1111
 MTU = $mtu
 
 [Peer]
@@ -148,7 +148,7 @@ cat <<EOF >client.conf
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = 10.0.0.188/24,  ${ipv6_range}188/64
-DNS = 8.8.8.8, 2001:4860:4860::8888
+DNS = 1.1.1.1, 2606:4700:4700::1111
 #  MTU = $mtu
 #  PreUp =  start   .\route\routes-up.bat
 #  PostDown = start  .\route\routes-down.bat
@@ -179,7 +179,7 @@ EOF
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 8.8.8.8, 2001:4860:4860::8888
+DNS = 1.1.1.1, 2606:4700:4700::1111
 
 [Peer]
 PublicKey = $(cat spublickey)
@@ -216,7 +216,7 @@ cat /etc/wireguard/wg_${host}_2.conf   && next
 cat /etc/wireguard/wg_${host}_3.conf   && next
 
 echo_RedBG   " One-Step Automated Install WireGuard Script For Debian_9 Ubuntu Centos_7 "
-echo_GreenBG "      Open Source Project: https://github.com/hongwenjun/vps_setup        "
+echo_GreenBG "      Open Source Project: https://github.com/assemator/vps_setup        "
 
 echo_Yellow  ":: WireGuard Management Command."
 echo_SkyBlue  "Usage: ${GreenBG} bash wgmtu ${SkyBlue} [ setup | remove | vps | bench | -U ] "
