@@ -129,7 +129,7 @@ wg_clients(){
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 1.1.1.1, 2606:4700:4700::1111
+DNS = 94.140.14.14, 2a00:5a60::ad1:0ff
 
 [Peer]
 PublicKey = $(wg show wg0 public-key)
@@ -337,7 +337,7 @@ add_peer(){
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 1.1.1.1, 2606:4700:4700::1111
+DNS = 94.140.14.14, 2a00:5a60::ad1:0ff
 
 [Peer]
 PublicKey = $(wg show wg0 public-key)
