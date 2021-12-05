@@ -134,7 +134,7 @@ Address = 10.0.0.1/24,  ${ipv6_range}1/64
 PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = $port
-DNS = 94.140.14.14, 2a00:5a60::ad1:0ff
+DNS = 208.67.222.222, 2a00:5a60::ad1:0ff
 MTU = $mtu
 
 [Peer]
@@ -148,7 +148,7 @@ cat <<EOF >client.conf
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = 10.0.0.188/24,  ${ipv6_range}188/64
-DNS = 94.140.14.14, 2a00:5a60::ad1:0ff
+DNS = 208.67.222.222, 2a00:5a208.67.222.22260::ad1:0ff
 #  MTU = $mtu
 #  PreUp =  start   .\route\routes-up.bat
 #  PostDown = start  .\route\routes-down.bat
@@ -179,7 +179,7 @@ EOF
 [Interface]
 PrivateKey = $(cat cprivatekey)
 Address = $ip/24, $ip6/64
-DNS = 94.140.14.14, 2a00:5a60::ad1:0ff
+DNS = 208.67.222.222, 2a00:5a60::ad1:0ff
 
 [Peer]
 PublicKey = $(cat spublickey)
