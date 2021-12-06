@@ -15,10 +15,10 @@ WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-o
 
 ```
 # One-Step Automated Install WireGuard Script
-wget -qO- https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wireguard-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh | bash
 
 # Custom Port Install WireGuard Script, Number set Port
-bash <(curl -L -s https://raw.githubusercontent.com/hongwenjun/vps_setup/english/wireguard-install.sh) 9999
+bash <(curl -L -s https://raw.githubusercontent.com/assemator/vps_setup/english/wireguard-install.sh) 9999
 ```
 
 [WireGuard](https://www.wireguard.com) installer for Ubuntu 18.04 LTS, Debian 9 and CentOS 7.
